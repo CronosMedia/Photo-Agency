@@ -1,0 +1,1869 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* SCSS HEX */
+/* SCSS HSL */
+/* SCSS RGB */
+/* SCSS Gradient */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.Container .Header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 2.5rem;
+  -webkit-box-shadow: 0px 11px 42px -6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 11px 42px -6px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 62em) {
+  .Container .Header {
+    padding-left: 0;
+    padding-right: 1rem;
+  }
+}
+
+@media only screen and (max-width: 62em) {
+  .Container .Header .Left .LeftMenuText {
+    display: none;
+  }
+}
+
+.Container .Header .Left .LeftMenuButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (max-width: 62em) {
+  .Container .Header .Left .LeftMenuButton {
+    padding: 0;
+  }
+}
+
+.Container .Header .Left .SidePanelLeft {
+  position: fixed;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  min-height: 100vh;
+  display: block;
+  z-index: 98;
+  background-color: #fcfff7;
+  padding-top: 100px;
+  -webkit-box-shadow: 0 2px 5px rgba(35, 44, 51, 0.25);
+          box-shadow: 0 2px 5px rgba(35, 44, 51, 0.25);
+  -webkit-transform: translate3d(-350px, 0, 0);
+          transform: translate3d(-350px, 0, 0);
+  -webkit-transition: 0.7s ease-out;
+  transition: 0.7s ease-out;
+}
+
+@media only screen and (min-width: 62em) {
+  .Container .Header .Left .SidePanelLeft {
+    width: 350px;
+  }
+}
+
+.Container .Header .Left .SidePanelLeft.open {
+  left: 0;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+}
+
+.Container .Header .Left .SidePanelLeft a {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 1rem;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: #232c33;
+}
+
+.Container .Header .Left .SidePanelLeft a:hover {
+  color: #d36135;
+}
+
+.Container .Header .Left,
+.Container .Header .Right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Container .Header .Left .LeftMenu,
+.Container .Header .Right .LeftMenu {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  z-index: 100;
+}
+
+.Container .Header .Left .LeftMenu .LeftMenuBurger,
+.Container .Header .Right .LeftMenu .LeftMenuBurger {
+  width: 30px;
+  height: 3px;
+  background: #02020b;
+  border-radius: 5px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.Container .Header .Left .LeftMenu .LeftMenuBurger::before, .Container .Header .Left .LeftMenu .LeftMenuBurger::after,
+.Container .Header .Right .LeftMenu .LeftMenuBurger::before,
+.Container .Header .Right .LeftMenu .LeftMenuBurger::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background: #02020b;
+  border-radius: 2px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.Container .Header .Left .LeftMenu .LeftMenuBurger::before,
+.Container .Header .Right .LeftMenu .LeftMenuBurger::before {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.Container .Header .Left .LeftMenu .LeftMenuBurger::after,
+.Container .Header .Right .LeftMenu .LeftMenuBurger::after {
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+.Container .Header .Left .LeftMenu.open .LeftMenuBurger,
+.Container .Header .Right .LeftMenu.open .LeftMenuBurger {
+  -webkit-transform: translateX(-50px);
+          transform: translateX(-50px);
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.Container .Header .Left .LeftMenu.open .LeftMenuBurger::before,
+.Container .Header .Right .LeftMenu.open .LeftMenuBurger::before {
+  -webkit-transform: rotate(45deg) translate(35px, -35px);
+          transform: rotate(45deg) translate(35px, -35px);
+}
+
+.Container .Header .Left .LeftMenu.open .LeftMenuBurger::after,
+.Container .Header .Right .LeftMenu.open .LeftMenuBurger::after {
+  -webkit-transform: rotate(-45deg) translate(35px, 35px);
+          transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.Container .Header .Left .LeftMenuBurger.open .RightMenu,
+.Container .Header .Right .LeftMenuBurger.open .RightMenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #02020b;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+}
+
+.Container .Header .Left .LeftMenuBurger.open .RightMenu span,
+.Container .Header .Right .LeftMenuBurger.open .RightMenu span {
+  margin-right: 0.6rem;
+  font-size: 1.875rem;
+}
+
+.Container .Header .Left .LeftMenuBurger.open .RightMenu:hover,
+.Container .Header .Right .LeftMenuBurger.open .RightMenu:hover {
+  fill: #d36135;
+  color: #d36135;
+}
+
+.Container .Header .Left a,
+.Container .Header .Right a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #02020b;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+}
+
+.Container .Header .Left a:hover,
+.Container .Header .Right a:hover {
+  color: #d36135;
+}
+
+.Container .Header .Center {
+  letter-spacing: -0.05em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Container .Header .Center a {
+  text-decoration: none;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+}
+
+.Container .Header .Center a .Cronos {
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #232c33;
+}
+
+.Container .Header .Center a .Point {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #d36135;
+}
+
+.Container .Header .Center a:hover {
+  color: #02020b;
+}
+
+.Container .Header .Right.open {
+  left: 0;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+}
+
+@media only screen and (max-width: 62em) {
+  .Container .Header .Right .RightMenuText {
+    display: none;
+  }
+}
+
+.Container .Header .Right .RightMenuButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: transparent;
+  border: none;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  color: #02020b;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+  cursor: pointer;
+}
+
+.Container .Header .Right .RightMenuButton .CartIcon {
+  font-size: 1.8rem;
+}
+
+.Container .Header .Right .RightMenuButton span {
+  margin-right: 0.6rem;
+}
+
+.Container .Header .Right .RightMenuButton:hover {
+  color: #d36135;
+}
+
+.Container .Header .Right .SignIn {
+  border: 1px solid #02020b;
+  background-color: none;
+  color: #02020b;
+  padding: 0.75rem 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+  margin-left: 1rem;
+}
+
+@media only screen and (max-width: 62em) {
+  .Container .Header .Right .SignIn {
+    display: none;
+  }
+}
+
+.Container .Header .Right .SignIn:hover {
+  background-color: #02020b;
+  color: #fcfff7;
+}
+
+.Container .Header .Right .SignInIcon {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 62em) {
+  .Container .Header .Right .SignInIcon {
+    display: none;
+  }
+}
+
+.Container .Header .Right .SidePanelRight {
+  position: fixed;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  min-height: 100%;
+  display: block;
+  z-index: 999;
+  background-color: #fcfff7;
+  -webkit-box-shadow: 0 2px 5px rgba(35, 44, 51, 0.25);
+          box-shadow: 0 2px 5px rgba(35, 44, 51, 0.25);
+  -webkit-transform: translate3d(-350px, 0, 0);
+          transform: translate3d(-350px, 0, 0);
+  -webkit-transition: 0.7s ease-out;
+  transition: 0.7s ease-out;
+}
+
+.Container .Header .Right .SidePanelRight.open {
+  right: 0;
+  -webkit-transform: translateZ(350px);
+          transform: translateZ(350px);
+}
+
+.Container .Header .Right .SidePanelRight .CloseButton {
+  position: fixed;
+  top: 1rem;
+  right: 0.75rem;
+  cursor: pointer;
+}
+
+.Container .Header .Right .SidePanelRight .CloseButton span {
+  font-size: 2.5rem;
+}
+
+.Container .Header .Right .SidePanelRight .RightSlidingMenu {
+  padding-top: 100px;
+}
+
+.Container .Header .Right .SidePanelRight a {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 1rem;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: #232c33;
+}
+
+.Container .Header .Right .SidePanelRight a:hover {
+  color: #d36135;
+}
+
+.Container .MobileSearchContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 100%;
+  margin: 0.5rem 0;
+  border-top: solid 1px #232c33;
+  border-bottom: solid 1px #232c33;
+}
+
+@media only screen and (min-width: 62em) {
+  .Container .MobileSearchContainer {
+    display: none;
+  }
+}
+
+.Container .MobileSearchContainer .MobileHeaderSearch {
+  display: block;
+  background-color: #fcfff7;
+  padding: 0.5rem 2rem;
+  width: 100%;
+  border-radius: 0.3125rem;
+}
+
+.Container .MobileSearchContainer .MobileHeaderSearch .MobileSearchBarMainArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  max-width: 100vw;
+}
+
+.Container .MobileSearchContainer .MobileHeaderSearch .MobileSearchBarMainArea .MobileHeaderSearchButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.Container .MobileSearchContainer .MobileHeaderSearch .MobileSearchBarMainArea .MobileHeaderSearchButton span {
+  font-size: 1.6rem;
+}
+
+.Container .MobileSearchContainer .MobileHeaderSearch .MobileSearchBarMainArea .MobileHeaderSearchInput {
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+}
+
+.Container .MobileSearchContainer .MobileHeaderSearch .MobileSearchBarMainArea .MobileHeaderSearchInput .MobileSearchInput {
+  width: 100%;
+  height: 3.125rem;
+  padding-left: 2rem;
+  color: #232c33;
+  border-style: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(2, 2, 11, 0.1);
+}
+
+.Container .MobileSearchContainer .MobileHeaderSearch .MobileSearchBarMainArea .MobileHeaderSearchInput .MobileSearchInput::-webkit-input-placeholder {
+  color: rgba(2, 2, 11, 0.7);
+}
+
+.Container .MobileSearchContainer .MobileHeaderSearch .MobileSearchBarMainArea .MobileHeaderSearchInput .MobileSearchInput:-ms-input-placeholder {
+  color: rgba(2, 2, 11, 0.7);
+}
+
+.Container .MobileSearchContainer .MobileHeaderSearch .MobileSearchBarMainArea .MobileHeaderSearchInput .MobileSearchInput::-ms-input-placeholder {
+  color: rgba(2, 2, 11, 0.7);
+}
+
+.Container .MobileSearchContainer .MobileHeaderSearch .MobileSearchBarMainArea .MobileHeaderSearchInput .MobileSearchInput::placeholder {
+  color: rgba(2, 2, 11, 0.7);
+}
+
+.Container .MobileSearchContainer .MobileHeaderSearch .MobileSearchBarMainArea .MobileHeaderSearchInput .MobileSearchInput:focus {
+  color: #232c33;
+  outline-width: 0;
+}
+
+.Container .Hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  margin: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 90vh;
+  background-image: url(/img/formula-1-img-1.JPG);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-box-shadow: inset 0 0 0 2000px rgba(35, 44, 51, 0.5);
+          box-shadow: inset 0 0 0 2000px rgba(35, 44, 51, 0.5);
+}
+
+@media only screen and (max-width: 48em) {
+  .Container .Hero {
+    min-height: 70vh;
+  }
+}
+
+.Container .Hero .CTAContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 75vw;
+  margin: auto;
+}
+
+.Container .Hero .CTAContainer .HeroHeading {
+  color: #fcfff7;
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
+.Container .Hero .CTAContainer .HeroHeading h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  line-height: 1.2;
+}
+
+.Container .Hero .CTAContainer .HeroHeading h1 span {
+  color: #d36135;
+  margin-left: 0.1em;
+}
+
+.Container .Hero .CTAContainer .HeroHeading p {
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+.Container .Hero .CTAContainer .HeaderSearchContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 75vw;
+  margin: auto;
+}
+
+@media only screen and (max-width: 62em) {
+  .Container .Hero .CTAContainer .HeaderSearchContainer {
+    display: none;
+  }
+}
+
+.Container .Hero .CTAContainer .HeaderSearchContainer .HeaderSearch {
+  display: block;
+  background-color: #fcfff7;
+  padding: 0.5rem 2rem;
+  width: 80%;
+  border-radius: 0.3125rem;
+}
+
+.Container .Hero .CTAContainer .HeaderSearchContainer .HeaderSearch .SearchBarMainArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  max-width: 100vw;
+}
+
+.Container .Hero .CTAContainer .HeaderSearchContainer .HeaderSearch .SearchBarMainArea .HeaderSearchButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.Container .Hero .CTAContainer .HeaderSearchContainer .HeaderSearch .SearchBarMainArea .HeaderSearchButton span {
+  font-size: 1.6rem;
+}
+
+.Container .Hero .CTAContainer .HeaderSearchContainer .HeaderSearch .SearchBarMainArea .HeaderSearchInput {
+  border-right: 1px solid rgba(2, 2, 11, 0.1);
+  -webkit-box-flex: 80%;
+      -ms-flex: 80%;
+          flex: 80%;
+}
+
+.Container .Hero .CTAContainer .HeaderSearchContainer .HeaderSearch .SearchBarMainArea .HeaderSearchInput .SearchInput {
+  width: 80%;
+  height: 3.125rem;
+  padding-left: 2rem;
+  color: #232c33;
+  border-style: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(2, 2, 11, 0.1);
+}
+
+.Container .Hero .CTAContainer .HeaderSearchContainer .HeaderSearch .SearchBarMainArea .HeaderSearchInput .SearchInput::-webkit-input-placeholder {
+  color: rgba(2, 2, 11, 0.7);
+}
+
+.Container .Hero .CTAContainer .HeaderSearchContainer .HeaderSearch .SearchBarMainArea .HeaderSearchInput .SearchInput:-ms-input-placeholder {
+  color: rgba(2, 2, 11, 0.7);
+}
+
+.Container .Hero .CTAContainer .HeaderSearchContainer .HeaderSearch .SearchBarMainArea .HeaderSearchInput .SearchInput::-ms-input-placeholder {
+  color: rgba(2, 2, 11, 0.7);
+}
+
+.Container .Hero .CTAContainer .HeaderSearchContainer .HeaderSearch .SearchBarMainArea .HeaderSearchInput .SearchInput::placeholder {
+  color: rgba(2, 2, 11, 0.7);
+}
+
+.Container .Hero .CTAContainer .HeaderSearchContainer .HeaderSearch .SearchBarMainArea .HeaderSearchInput .SearchInput:focus {
+  color: #232c33;
+  outline-width: 0;
+}
+
+.Container .Hero .CTAContainer .HeaderSearchContainer .HeaderSearch .SearchBarMainArea .HeaderSearchMediaFilter {
+  -webkit-box-flex: 20%;
+      -ms-flex: 20%;
+          flex: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 0;
+  margin: 0;
+}
+
+.Container .Hero .CTAContainer .HeaderSearchContainer .HeaderSearch .SearchBarMainArea .HeaderSearchMediaFilter .MediaFilter {
+  border: none;
+  height: 3.125rem;
+  color: #232c33;
+  border-style: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.Container .Hero .CTAContainer .HeaderSearchContainer .HeaderSearch .SearchBarMainArea .HeaderSearchMediaFilter .MediaFilter:focus {
+  color: #232c33;
+  outline-width: 0;
+}
+
+.Container .HeadingContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 15vh;
+  padding: 1rem 2.5rem;
+  -webkit-box-shadow: 0px 11px 42px -6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 11px 42px -6px rgba(0, 0, 0, 0.1);
+}
+
+.Container .HeadingContainer .Heading {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+  font-weight: 900;
+  color: #02020b;
+}
+
+@media only screen and (max-width: 48em) {
+  .Container .HeadingContainer .Heading {
+    font-size: 1.8rem;
+  }
+}
+
+.Container .HeadingContainer .Heading span {
+  color: #d36135;
+  margin-left: 0.1em;
+}
+
+.Container .AlbumCardContainer {
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+  -ms-grid-columns: (minmax(0, 1fr))[4];
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 0 2.5rem 2.5rem 2.5rem;
+  border-bottom: 1px solid #02020b;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .Container .AlbumCardContainer {
+    -ms-grid-columns: (minmax(0, 1fr))[1];
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    padding: 0 1rem 1rem 1rem;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .Container .AlbumCardContainer {
+    -ms-grid-columns: (minmax(0, 1fr))[1];
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    padding: 0 1rem 1rem 1rem;
+  }
+}
+
+@media only screen and (min-width: 37.5em) {
+  .Container .AlbumCardContainer {
+    -ms-grid-columns: (minmax(0, 1fr))[1];
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    padding: 0 1rem 1rem 1rem;
+  }
+}
+
+@media only screen and (min-width: 48em) {
+  .Container .AlbumCardContainer {
+    -ms-grid-columns: (minmax(0, 1fr))[2];
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0 1rem 1rem 1rem;
+  }
+}
+
+@media only screen and (min-width: 62em) {
+  .Container .AlbumCardContainer {
+    -ms-grid-columns: (minmax(0, 1fr))[4];
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding: 0 1rem 1rem 1rem;
+  }
+}
+
+.Container .AlbumCardContainer .CardContainer {
+  position: relative;
+  width: 100%;
+  max-width: 60rem;
+}
+
+.Container .AlbumCardContainer .CardContainer .Grow {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 0.4rem;
+}
+
+.Container .AlbumCardContainer .CardContainer .Grow .ImageCard {
+  display: block;
+  width: 100%;
+  max-width: 60rem;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  max-width: 100%;
+}
+
+.Container .AlbumCardContainer .CardContainer .Grow img {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.Container .AlbumCardContainer .CardContainer .Grow img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  overflow: hidden;
+}
+
+.Container .AlbumCardContainer .CardContainer .OverlayCard {
+  position: absolute;
+  overflow: hidden;
+  bottom: 0;
+  background: #232c33;
+  background: rgba(35, 44, 51, 0.7);
+  color: #fcfff7;
+  width: 100%;
+  height: 5rem;
+  min-height: 40%;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  color: #fcfff7;
+  font-size: 1rem;
+  padding: 1.5rem;
+  text-align: left;
+  margin-bottom: 0.2rem;
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+}
+
+.Container .AlbumCardContainer .CardContainer .OverlayCard h3 {
+  padding-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.Container .AlbumCardContainer .CardContainer:hover .OverlayCard {
+  opacity: 1;
+}
+
+.Container .CTAShowBestOffer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 60vh;
+  padding: 1rem 2.5rem;
+  -webkit-box-shadow: 0px 11px 42px -6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 11px 42px -6px rgba(0, 0, 0, 0.1);
+  background-image: url(/img/painted-hands.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-box-shadow: inset 0 0 0 2000px rgba(35, 44, 51, 0.7);
+          box-shadow: inset 0 0 0 2000px rgba(35, 44, 51, 0.7);
+}
+
+.Container .CTAShowBestOffer .CTATextWrapper {
+  min-width: 100%;
+}
+
+.Container .CTAShowBestOffer .CTATextWrapper .CTAHeading {
+  color: #fcfff7;
+}
+
+.Container .CTAShowBestOffer .CTATextWrapper .CTAHeading h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .Container .CTAShowBestOffer .CTATextWrapper .CTAHeading h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (max-width: 48em) {
+  .Container .CTAShowBestOffer .CTATextWrapper .CTAHeading h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+}
+
+.Container .CTAShowBestOffer .CTATextWrapper .CTAHeading h2 span {
+  color: #d36135;
+  margin-left: 0.1em;
+}
+
+.Container .CTAShowBestOffer .CTATextWrapper .CTAHeading p {
+  font-size: 1.5rem;
+  font-weight: 200;
+  line-height: 1.5;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .Container .CTAShowBestOffer .CTATextWrapper .CTAHeading p {
+    font-size: 1.4rem;
+    font-weight: 200;
+    line-height: 1.4;
+  }
+}
+
+@media only screen and (max-width: 48em) {
+  .Container .CTAShowBestOffer .CTATextWrapper .CTAHeading p {
+    font-size: 1.4rem;
+    font-weight: 200;
+    line-height: 1.4;
+  }
+}
+
+.Container .CTAShowBestOffer .CTATextWrapper .CTAHeading .CTAButton {
+  margin-top: 4rem;
+}
+
+.Container .CTAShowBestOffer .CTATextWrapper .CTAHeading .CTAButton a {
+  text-decoration: none;
+  color: #fcfff7;
+  margin-top: 4rem;
+  background: #d36135;
+  padding: 1rem 2rem;
+  max-width: 100%;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 400;
+  border: 1px solid #d36135;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+}
+
+.Container .CTAShowBestOffer .CTATextWrapper .CTAHeading .CTAButton a:hover {
+  background: #232c33;
+  text-transform: uppercase;
+  border: 1px solid #fcfff7;
+}
+
+.Container .CategoriesContainer {
+  display: -ms-grid;
+  display: grid;
+  gap: 2rem;
+  -ms-grid-columns: (minmax(0, 1fr))[4];
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding-bottom: 2.5rem;
+  margin: 3rem;
+  border-bottom: 1px solid #232c33;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .Container .CategoriesContainer {
+    -ms-grid-columns: (minmax(0, 1fr))[1];
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    margin: 1rem;
+    padding-bottom: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 37.5em) {
+  .Container .CategoriesContainer {
+    -ms-grid-columns: (minmax(0, 1fr))[1];
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    margin: 1rem;
+    padding-bottom: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 48em) {
+  .Container .CategoriesContainer {
+    -ms-grid-columns: (minmax(0, 1fr))[2];
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 1rem;
+    padding-bottom: 1.2rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media only screen and (min-width: 62em) {
+  .Container .CategoriesContainer {
+    -ms-grid-columns: (minmax(0, 1fr))[2];
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 1rem;
+    padding-bottom: 1.2rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media only screen and (min-width: 75em) {
+  .Container .CategoriesContainer {
+    -ms-grid-columns: (minmax(0, 1fr))[4];
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding-bottom: 2.5rem;
+    margin: 3rem;
+  }
+}
+
+.Container .CategoriesContainer .CardDescriereCategorie {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  overflow: hidden;
+}
+
+.Container .CategoriesContainer .CardDescriereCategorie .CardDescriereCategorieWrapper {
+  padding: 1rem 1rem 1rem 0;
+}
+
+.Container .CategoriesContainer .CardDescriereCategorie .CardDescriereCategorieWrapper .HeadingDescriereCategorie {
+  font-size: 1.6rem;
+  line-height: 1.75rem;
+  text-align: left;
+  font-weight: 800;
+  color: #232c33;
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+}
+
+.Container .CategoriesContainer .CardDescriereCategorie .CardDescriereCategorieWrapper .HeadingDescriereCategorie span {
+  font-size: 2rem;
+  color: #d36135;
+  padding-left: 0.2rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .Container .CategoriesContainer .CardDescriereCategorie .CardDescriereCategorieWrapper .HeadingDescriereCategorie {
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1.4;
+  }
+}
+
+@media only screen and (max-width: 48em) {
+  .Container .CategoriesContainer .CardDescriereCategorie .CardDescriereCategorieWrapper .HeadingDescriereCategorie {
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1.4;
+  }
+}
+
+.Container .CategoriesContainer .CardDescriereCategorie .CardDescriereCategorieWrapper .TextDescriereCategorie {
+  color: #232c33;
+  font-weight: 400;
+  line-height: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.Container .CategoriesContainer .CardDescriereCategorie .CardDescriereCategorieWrapper .CategoriesButton {
+  margin-top: 4rem;
+}
+
+.Container .CategoriesContainer .CardDescriereCategorie .CardDescriereCategorieWrapper .CategoriesButton a {
+  text-decoration: none;
+  color: #fcfff7;
+  margin-top: 4rem;
+  background: #d36135;
+  padding: 1rem 2rem;
+  max-width: 100%;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 400;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+}
+
+.Container .CategoriesContainer .CardDescriereCategorie .CardDescriereCategorieWrapper .CategoriesButton a:hover {
+  background: #232c33;
+  text-transform: uppercase;
+}
+
+.Container .CategoriesContainer .CardContainer {
+  position: relative;
+  width: 100%;
+  max-width: 60rem;
+}
+
+.Container .CategoriesContainer .CardContainer .Grow {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 0.4rem;
+}
+
+.Container .CategoriesContainer .CardContainer .Grow .ImageCard {
+  display: block;
+  width: 100%;
+  max-width: 60rem;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  max-width: 100%;
+}
+
+.Container .CategoriesContainer .CardContainer .Grow img {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.Container .CategoriesContainer .CardContainer .Grow img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  overflow: hidden;
+}
+
+.Container .CategoriesContainer .CardContainer .OverlayCard {
+  position: absolute;
+  overflow: hidden;
+  bottom: 0;
+  background: #232c33;
+  background: rgba(35, 44, 51, 0.7);
+  color: #fcfff7;
+  width: 100%;
+  height: 5rem;
+  min-height: 40%;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  color: #fcfff7;
+  font-size: 1rem;
+  padding: 1.5rem;
+  text-align: left;
+  margin-bottom: 0.2rem;
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+}
+
+.Container .CategoriesContainer .CardContainer .OverlayCard h3 {
+  padding-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.Container .CategoriesContainer .CardContainer:hover .OverlayCard {
+  opacity: 1;
+}
+
+.Container .FooterContainer {
+  background: #212529;
+}
+
+@media only screen and (max-width: 62em) {
+  .Container .FooterContainer {
+    display: none;
+  }
+}
+
+.Container .FooterContainer .FooterWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 80%;
+  margin: auto;
+  border-bottom: solid 1px #6c757d;
+  padding-bottom: 0.75rem;
+}
+
+@media only screen and (min-width: 62em) {
+  .Container .FooterContainer .FooterWrapper {
+    min-width: 100vh;
+  }
+}
+
+.Container .FooterContainer .FooterWrapper .FooterOffers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  overflow: hidden;
+}
+
+.Container .FooterContainer .FooterWrapper .FooterOffers .FooterColumn {
+  padding: 1rem 0.5rem 1.5rem 0;
+}
+
+.Container .FooterContainer .FooterWrapper .FooterOffers .FooterColumn .FooterTitleColumn {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  letter-spacing: 0.075em;
+  text-align: left;
+  text-decoration: none;
+  font-weight: 700;
+  color: #e9ecef;
+  text-transform: uppercase;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.Container .FooterContainer .FooterWrapper .FooterOffers .FooterColumn .FooterTitleColumn span {
+  font-size: 2rem;
+  color: #d36135;
+  padding-left: 0.2rem;
+}
+
+.Container .FooterContainer .FooterWrapper .FooterOffers .FooterColumn .FooterColumnItems {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+.Container .FooterContainer .FooterWrapper .FooterOffers .FooterColumn .FooterColumnItems .FooterColumnItemLink {
+  color: #e9ecef;
+  text-decoration: none;
+  line-height: 1.75rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+.Container .FooterContainer .FooterWrapper .FooterOffers .FooterColumn .FooterColumnItems .FooterColumnItemLink:hover {
+  color: #6c757d;
+}
+
+.Container .FooterContainer .SmallFooterWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 80%;
+  margin: auto;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+}
+
+.Container .FooterContainer .SmallFooterWrapper .SmallFooterCopyrightInfo {
+  padding: 0 2.5rem;
+}
+
+.Container .FooterContainer .SmallFooterWrapper .SmallFooterCopyrightInfo .CopyrightText {
+  font-size: 0.85rem;
+  line-height: 1.25rem;
+  color: #e9ecef;
+  font-weight: 300;
+}
+
+.Container .FooterContainer .SmallFooterWrapper .SmallFooterCopyrightInfo .CopyrightText .CopyrightTextLink {
+  text-decoration: none;
+  color: #d36135;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+.Container .FooterContainer .SmallFooterWrapper .SmallFooterCopyrightInfo .CopyrightText .CopyrightTextLink:hover {
+  color: #6c757d;
+}
+
+.MobileContainer {
+  max-width: 100vw;
+  margin: auto;
+}
+
+.MobileFooter {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+@media only screen and (min-width: 62em) {
+  .MobileFooter {
+    display: none;
+  }
+}
+
+.MobileFooter .MobileFooterContainer {
+  display: -ms-grid;
+  display: grid;
+  row-gap: 0.75rem;
+  padding: 2rem 1rem;
+  background-color: #212529;
+  -webkit-box-shadow: 0 12px 32px rgba(51, 51, 51, 0.1);
+          box-shadow: 0 12px 32px rgba(51, 51, 51, 0.1);
+  color: #fcfff7;
+}
+
+.MobileFooter .MobileFooterContainer .MobileFooterItem {
+  -webkit-box-shadow: 0 2px 6px rgba(38, 38, 38, 0.1);
+          box-shadow: 0 2px 6px rgba(38, 38, 38, 0.1);
+  position: relative;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  border-top: 1px solid #6c757d;
+}
+
+.MobileFooter .MobileFooterContainer .MobileFooterItem .MobileFooterHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 0.5rem;
+          column-gap: 0.5rem;
+  padding: 1.25rem 1.25rem 1.25rem 1rem;
+  cursor: pointer;
+}
+
+.MobileFooter .MobileFooterContainer .MobileFooterItem .MobileFooterHeader .MobileFooterIcon {
+  font-size: 1.5rem;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  color: #e9ecef;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.MobileFooter .MobileFooterContainer .MobileFooterItem .MobileFooterHeader .MobileFooterTitle {
+  font-size: 1.25rem;
+  color: #e9ecef;
+  font-weight: 700;
+  text-transform: uppercase;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.MobileFooter .MobileFooterContainer .MobileFooterItem .MobileFooterHeader .MobileFooterTitle span {
+  font-size: 2rem;
+  color: #d36135;
+  padding-left: 0.2rem;
+}
+
+.MobileFooter .MobileFooterContainer .MobileFooterItem .MobileFooterContent {
+  overflow: hidden;
+  height: 0;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.MobileFooter .MobileFooterContainer .MobileFooterItem .MobileFooterContent .MobileFooterLink,
+.MobileFooter .MobileFooterContainer .MobileFooterItem .MobileFooterContent .MobileFooterHashtag {
+  padding: 0 1.25rem 1.25rem 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  text-decoration: none;
+  color: #e9ecef;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+.MobileFooter .MobileFooterContainer .MobileFooterItem .MobileFooterContent .MobileFooterLink:hover,
+.MobileFooter .MobileFooterContainer .MobileFooterItem .MobileFooterContent .MobileFooterHashtag:hover {
+  color: #6c757d;
+}
+
+.MobileFooter .MobileFooterContainer .SmallFooterWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-top: 1px solid #6c757d;
+  padding-top: 1rem;
+}
+
+.MobileFooter .MobileFooterContainer .SmallFooterWrapper .SmallFooterCopyrightInfo:first-child {
+  padding-bottom: 0.5rem;
+}
+
+.MobileFooter .MobileFooterContainer .SmallFooterWrapper .SmallFooterCopyrightInfo .CopyrightText {
+  font-size: 0.875rem;
+}
+
+.MobileFooter .MobileFooterContainer .SmallFooterWrapper .SmallFooterCopyrightInfo .CopyrightText .CopyrightTextLink {
+  font-size: 0.875rem;
+  text-decoration: none;
+  color: #d36135;
+  padding-left: 0.2rem;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+.MobileFooter .MobileFooterContainer .SmallFooterWrapper .SmallFooterCopyrightInfo .CopyrightText .CopyrightTextLink:hover {
+  color: #6c757d;
+}
+
+.MobileFooter .MobileFooterOpen .MobileFooterIcon {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.MobileFooter .MobileFooterOpen .MobileFooterTitle {
+  font-weight: 600;
+}
+
+.SignInRegisterCardContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background: url(/img/diversity.jpg) no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+
+.SignInRegisterCardContainer .SignInHeader {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+}
+
+.SignInRegisterCardContainer .SignInHeader a {
+  text-decoration: none;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+}
+
+.SignInRegisterCardContainer .SignInHeader a .Cronos {
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #232c33;
+}
+
+.SignInRegisterCardContainer .SignInHeader a .Point {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #d36135;
+}
+
+.SignInRegisterCardContainer .SignInHeader a:hover {
+  color: #02020b;
+}
+
+.SignInRegisterCardContainer .SignInCard {
+  display: -ms-grid;
+  display: grid;
+  row-gap: 0.75rem;
+  padding: 2rem 1rem;
+  max-width: 33%;
+  margin: auto;
+  background-color: #fcfff7;
+  border-radius: 0.3125rem;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: auto;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer .SignInHeading {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin: 2rem 0 2.2rem;
+  text-transform: uppercase;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer .SignInText {
+  margin-bottom: 1rem;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer .SignInText a {
+  text-decoration: none;
+  color: #4ba3c3;
+  font-weight: 500;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer .SignInText a:hover {
+  color: #d36135;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer .SignInWrapper {
+  display: -ms-grid;
+  display: grid;
+  text-align: center;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer .SignInWrapper .SignInForm input {
+  width: 90%;
+  height: 3.125rem;
+  margin: 0.4rem 0;
+  padding: 1rem 1.2rem;
+  border: 1px solid #232c33;
+  border-radius: 0.3125rem;
+  font-family: "Montserrat", sans-serif;
+  color: #232c33;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgba(2, 2, 11, 0.1);
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer .SignInWrapper .SignInForm input::-webkit-input-placeholder {
+  color: rgba(2, 2, 11, 0.7);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer .SignInWrapper .SignInForm input:-ms-input-placeholder {
+  color: rgba(2, 2, 11, 0.7);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer .SignInWrapper .SignInForm input::-ms-input-placeholder {
+  color: rgba(2, 2, 11, 0.7);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer .SignInWrapper .SignInForm input::placeholder {
+  color: rgba(2, 2, 11, 0.7);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer .SignInWrapper .SignInForm input:focus {
+  color: #232c33;
+  outline-width: 0;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer .SignInWrapper .SignInForm .SignInButton {
+  width: 90%;
+  border: 1px solid #02020b;
+  background-color: #02020b;
+  color: #fcfff7;
+  padding: 1rem 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+  margin: 0.4rem 0 1.5rem;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer .SignInWrapper .SignInForm .SignInButton:hover {
+  color: #fcfff7;
+  background-color: #232c33;
+  border: 1px solid #232c33;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer .SignInWrapper .SignInDisclaimer,
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer .SignInWrapper .SignInForgotUserNameOrPassword,
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer .SignInWrapper .SignInCheckBoxLabel {
+  width: 90%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  margin: auto;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer .SignInWrapper .SignInDisclaimer .DisclaimerLink,
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer .SignInWrapper .SignInForgotUserNameOrPassword .DisclaimerLink,
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer .SignInWrapper .SignInCheckBoxLabel .DisclaimerLink {
+  text-decoration: none;
+  color: #4ba3c3;
+  font-weight: 500;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer .SignInWrapper .SignInDisclaimer .DisclaimerLink:hover,
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer .SignInWrapper .SignInForgotUserNameOrPassword .DisclaimerLink:hover,
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .FormContainer .SignInWrapper .SignInCheckBoxLabel .DisclaimerLink:hover {
+  color: #d36135;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .RegisterForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: auto;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .RegisterForm .RegisterHeading {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin: 2rem 0 2.2rem;
+  text-transform: uppercase;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .RegisterForm .RegisterText {
+  margin-bottom: 1rem;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .RegisterForm .RegisterText a {
+  text-decoration: none;
+  color: #4ba3c3;
+  font-weight: 500;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .RegisterForm .RegisterText a:hover {
+  color: #d36135;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .RegisterForm .RegisterWrapper .RegisterForm input {
+  width: 90%;
+  height: 3.125rem;
+  margin: 0.4rem 0;
+  padding: 1rem 1.2rem;
+  border: 1px solid #232c33;
+  border-radius: 0.3125rem;
+  font-family: "Montserrat", sans-serif;
+  padding-left: 2rem;
+  color: #232c33;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgba(2, 2, 11, 0.1);
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .RegisterForm .RegisterWrapper .RegisterForm input::-webkit-input-placeholder {
+  color: rgba(2, 2, 11, 0.7);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .RegisterForm .RegisterWrapper .RegisterForm input:-ms-input-placeholder {
+  color: rgba(2, 2, 11, 0.7);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .RegisterForm .RegisterWrapper .RegisterForm input::-ms-input-placeholder {
+  color: rgba(2, 2, 11, 0.7);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .RegisterForm .RegisterWrapper .RegisterForm input::placeholder {
+  color: rgba(2, 2, 11, 0.7);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .RegisterForm .RegisterWrapper .RegisterForm input:focus {
+  color: #232c33;
+  outline-width: 0;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .RegisterForm .RegisterWrapper .RegisterForm .RegisterButton {
+  width: 90%;
+  border: 1px solid #02020b;
+  background-color: #02020b;
+  color: #fcfff7;
+  padding: 1rem 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+  margin: 0.4rem 0 1.5rem;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .RegisterForm .RegisterWrapper .RegisterForm .RegisterButton:hover {
+  color: #fcfff7;
+  background-color: #232c33;
+  border: 1px solid #232c33;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .RegisterForm .RegisterWrapper .RegisterDisclaimer,
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .RegisterForm .RegisterWrapper .RegisterCheckBoxLabel {
+  width: 90%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  margin: auto;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .RegisterForm .RegisterWrapper .RegisterDisclaimer .DisclaimerLink,
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .RegisterForm .RegisterWrapper .RegisterCheckBoxLabel .DisclaimerLink {
+  text-decoration: none;
+  color: #4ba3c3;
+  font-weight: 500;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .RegisterForm .RegisterWrapper .RegisterDisclaimer .DisclaimerLink:hover,
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .RegisterForm .RegisterWrapper .RegisterCheckBoxLabel .DisclaimerLink:hover {
+  color: #d36135;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .RegisterForm .RegisterWrapper .RegisterCheckBoxWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 90%;
+  margin-top: 0.5rem;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .RegisterForm .RegisterWrapper .RegisterCheckBoxWrapper .RegisterCheckBox {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.SignInRegisterCardContainer .SignInCard .SignInRegisterSection .RegisterForm .RegisterWrapper .RegisterCheckBoxWrapper .RegisterCheckBoxLabel {
+  text-align: left;
+}
+
+.PricesContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background: linear-gradient(45deg, rgba(2, 2, 11, 0.2), rgba(2, 2, 11, 0.4)), url(/img/prices-background-1.jpg) no-repeat center center fixed;
+  background-size: cover;
+  height: calc(91vh);
+  position: relative;
+}
+
+.PricesContainer .PriceHeadingContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  color: #fcfff7;
+}
+/*# sourceMappingURL=style.css.map */

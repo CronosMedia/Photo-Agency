@@ -1,0 +1,1522 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* SCSS HEX */
+$flame: #d36135ff;
+$maximum-blue: #4ba3c3ff;
+$middle-yellow: #ffe900ff;
+$baby-powder: #fcfff7ff;
+$rich-black-fogra-39: #02020bff;
+$gunmetal: #232c33ff;
+$gray-footer: #212529;
+$light-gray-footer: #e9ecef;
+$gray-link-hover-footer: #6c757d;
+
+/* SCSS HSL */
+$flame: hsla(17, 64%, 52%, 1);
+$maximum-blue: hsla(196, 50%, 53%, 1);
+$middle-yellow: hsla(55, 100%, 50%, 1);
+$baby-powder: hsla(82, 100%, 98%, 1);
+$rich-black-fogra-39: hsla(240, 69%, 3%, 1);
+$gunmetal: hsla(206, 19%, 17%, 1);
+
+/* SCSS RGB */
+$flame: rgba(211, 97, 53, 1);
+$maximum-blue: rgba(75, 163, 195, 1);
+$middle-yellow: rgba(255, 233, 0, 1);
+$baby-powder: rgba(252, 255, 247, 1);
+$rich-black-fogra-39: rgba(2, 2, 11, 1);
+$gunmetal: rgba(35, 44, 51, 1);
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(
+	0deg,
+	#d36135ff,
+	#4ba3c3ff,
+	#ffe900ff,
+	#fcfff7ff,
+	#02020bff,
+	#232c33ff
+);
+$gradient-right: linear-gradient(
+	90deg,
+	#d36135ff,
+	#4ba3c3ff,
+	#ffe900ff,
+	#fcfff7ff,
+	#02020bff,
+	#232c33ff
+);
+$gradient-bottom: linear-gradient(
+	180deg,
+	#d36135ff,
+	#4ba3c3ff,
+	#ffe900ff,
+	#fcfff7ff,
+	#02020bff,
+	#232c33ff
+);
+$gradient-left: linear-gradient(
+	270deg,
+	#d36135ff,
+	#4ba3c3ff,
+	#ffe900ff,
+	#fcfff7ff,
+	#02020bff,
+	#232c33ff
+);
+$gradient-top-right: linear-gradient(
+	45deg,
+	#d36135ff,
+	#4ba3c3ff,
+	#ffe900ff,
+	#fcfff7ff,
+	#02020bff,
+	#232c33ff
+);
+$gradient-bottom-right: linear-gradient(
+	135deg,
+	#d36135ff,
+	#4ba3c3ff,
+	#ffe900ff,
+	#fcfff7ff,
+	#02020bff,
+	#232c33ff
+);
+$gradient-top-left: linear-gradient(
+	225deg,
+	#d36135ff,
+	#4ba3c3ff,
+	#ffe900ff,
+	#fcfff7ff,
+	#02020bff,
+	#232c33ff
+);
+$gradient-bottom-left: linear-gradient(
+	315deg,
+	#d36135ff,
+	#4ba3c3ff,
+	#ffe900ff,
+	#fcfff7ff,
+	#02020bff,
+	#232c33ff
+);
+$gradient-radial: radial-gradient(
+	#d36135ff,
+	#4ba3c3ff,
+	#ffe900ff,
+	#fcfff7ff,
+	#02020bff,
+	#232c33ff
+);
+
+$x-small: 37.5em; //max-width: 500px;
+$small: 37.5em; //min-width: 600px;
+$medium: 48em; //min-width: 768px;
+$large: 62em; //min-width: 992px;
+$xlarge: 75em; //min-width: 1200px;
+
+////////////////////////////////////////////////////
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+}
+
+.Container {
+	.Header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 1rem 2.5rem;
+		box-shadow: 0px 11px 42px -6px rgba(0, 0, 0, 0.1);
+
+		@media only screen and (max-width: $large) {
+			padding-left: 0;
+			padding-right: 1rem;
+		}
+
+		.Left {
+			.LeftMenuText {
+				@media only screen and (max-width: $large) {
+					display: none;
+				}
+			}
+			.LeftMenuButton {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+
+				@media only screen and (max-width: $large) {
+					padding: 0;
+				}
+			}
+
+			.SidePanelLeft {
+				position: fixed;
+				top: 0;
+				right: 100%;
+				width: 100%;
+				min-height: 100vh;
+				display: block;
+				z-index: 98;
+				background-color: $baby-powder;
+				padding-top: 100px;
+				box-shadow: 0 2px 5px rgba($gunmetal, 0.25);
+				transform: translate3d(-350px, 0, 0);
+				transition: 0.7s ease-out;
+
+				@media only screen and (min-width: $large) {
+					width: 350px;
+				}
+
+				&.open {
+					left: 0;
+					transform: translateZ(0);
+				}
+
+				a {
+					display: block;
+					width: 100%;
+					max-width: 200px;
+					margin: 0 auto 1rem;
+					text-align: left;
+					padding: 0.75rem 1rem;
+					font-size: 1.2rem;
+					font-weight: 400;
+					text-decoration: none;
+					color: $gunmetal;
+
+					&:hover {
+						color: $flame;
+					}
+				}
+			}
+		}
+		.Left,
+		.Right {
+			display: flex;
+			align-items: center;
+
+			.LeftMenu {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 50px;
+				height: 50px;
+				cursor: pointer;
+				transition: all 0.5s ease-in-out;
+				z-index: 100;
+
+				.LeftMenuBurger {
+					width: 30px;
+					height: 3px;
+					background: $rich-black-fogra-39;
+					border-radius: 5px;
+					transition: all 0.5s ease-in-out;
+
+					&::before,
+					&::after {
+						content: "";
+						position: absolute;
+						width: 30px;
+						height: 3px;
+						background: $rich-black-fogra-39;
+						border-radius: 2px;
+						transition: all 0.5s ease-in-out;
+					}
+
+					&::before {
+						transform: translateY(-10px);
+					}
+
+					&::after {
+						transform: translateY(10px);
+					}
+				}
+			}
+
+			.LeftMenu.open .LeftMenuBurger {
+				transform: translateX(-50px);
+				background: transparent;
+				box-shadow: none;
+			}
+
+			.LeftMenu.open .LeftMenuBurger::before {
+				transform: rotate(45deg) translate(35px, -35px);
+			}
+
+			.LeftMenu.open .LeftMenuBurger::after {
+				transform: rotate(-45deg) translate(35px, 35px);
+			}
+
+			.LeftMenuBurger.open .RightMenu {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				border: none;
+				background-color: transparent;
+				cursor: pointer;
+				color: $rich-black-fogra-39;
+				font-family: "Montserrat", sans-serif;
+				text-transform: uppercase;
+				font-size: 0.875rem;
+				transition: 0.4s ease-out;
+				span {
+					margin-right: 0.6rem;
+					font-size: 1.875rem;
+				}
+
+				&:hover {
+					fill: $flame;
+					color: $flame;
+				}
+			}
+
+			a {
+				margin-left: 1rem;
+				text-decoration: none;
+				color: $rich-black-fogra-39;
+				text-transform: uppercase;
+				font-size: 0.875rem;
+				transition: 0.4s ease-out;
+
+				&:hover {
+					color: $flame;
+				}
+			}
+		}
+		.Center {
+			letter-spacing: -0.05em;
+			display: flex;
+			align-items: center;
+
+			a {
+				text-decoration: none;
+				transition: 0.4s ease-out;
+				.Cronos {
+					font-size: 2rem;
+					font-weight: 900;
+					text-transform: uppercase;
+					color: $gunmetal;
+				}
+				.Point {
+					font-size: 2rem;
+					font-weight: 900;
+					color: $flame;
+				}
+
+				&:hover {
+					color: $rich-black-fogra-39;
+				}
+			}
+		}
+		.Right {
+			&.open {
+				left: 0;
+				transform: translateZ(0);
+			}
+			.RightMenuText {
+				@media only screen and (max-width: $large) {
+					display: none;
+				}
+			}
+			.RightMenuButton {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				background: transparent;
+				border: none;
+				margin-left: 1rem;
+				text-decoration: none;
+				font-family: "Montserrat", sans-serif;
+				color: $rich-black-fogra-39;
+				text-transform: uppercase;
+				font-size: 0.875rem;
+				transition: 0.4s ease-out;
+				cursor: pointer;
+
+				.CartIcon {
+					font-size: 1.8rem;
+				}
+				span {
+					margin-right: 0.6rem;
+				}
+
+				&:hover {
+					color: $flame;
+				}
+			}
+			.SignIn {
+				border: 1px solid $rich-black-fogra-39;
+				background-color: none;
+				color: $rich-black-fogra-39;
+				padding: 0.75rem 1.5rem;
+				font-family: "Montserrat", sans-serif;
+				text-transform: uppercase;
+				font-size: 0.875rem;
+				border-radius: 0.3125rem;
+				cursor: pointer;
+				transition: 0.4s ease-out;
+				margin-left: 1rem;
+
+				@media only screen and (max-width: $large) {
+					display: none;
+				}
+
+				&:hover {
+					background-color: $rich-black-fogra-39;
+					color: $baby-powder;
+				}
+			}
+
+			.SignInIcon {
+				font-size: 2rem;
+				cursor: pointer;
+				@media only screen and (min-width: $large) {
+					display: none;
+				}
+			}
+
+			.SidePanelRight {
+				position: fixed;
+				top: 0;
+				right: 100%;
+				width: 100%;
+				min-height: 100%;
+				display: block;
+				z-index: 999;
+				background-color: $baby-powder;
+				box-shadow: 0 2px 5px rgba($gunmetal, 0.25);
+				transform: translate3d(-350px, 0, 0);
+				transition: 0.7s ease-out;
+
+				&.open {
+					right: 0;
+					transform: translateZ(350px);
+				}
+
+				.CloseButton {
+					position: fixed;
+					top: 1rem;
+					right: 0.75rem;
+					cursor: pointer;
+					span {
+						font-size: 2.5rem;
+					}
+				}
+
+				.RightSlidingMenu {
+					padding-top: 100px;
+				}
+
+				a {
+					display: block;
+					width: 100%;
+					max-width: 200px;
+					margin: 0 auto 1rem;
+					text-align: left;
+					padding: 0.75rem 1rem;
+					font-size: 1.2rem;
+					font-weight: 400;
+					text-decoration: none;
+					color: $gunmetal;
+
+					&:hover {
+						color: $flame;
+					}
+				}
+			}
+		}
+	}
+
+	//MOBILE SEARCH
+
+	.MobileSearchContainer {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		max-width: 100%;
+		margin: 0.5rem 0;
+		border-top: solid 1px $gunmetal;
+		border-bottom: solid 1px $gunmetal;
+		@media only screen and (min-width: $large) {
+			display: none;
+		}
+		.MobileHeaderSearch {
+			display: block;
+			background-color: $baby-powder;
+			padding: 0.5rem 2rem;
+			width: 100%;
+
+			border-radius: 0.3125rem;
+
+			.MobileSearchBarMainArea {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: left;
+				max-width: 100vw;
+
+				.MobileHeaderSearchButton {
+					background-color: transparent;
+					border: none;
+					cursor: pointer;
+					span {
+						font-size: 1.6rem;
+					}
+				}
+				.MobileHeaderSearchInput {
+					flex: 100%;
+					.MobileSearchInput {
+						width: 100%;
+						height: 3.125rem;
+						padding-left: 2rem;
+						color: $gunmetal;
+						border-style: none;
+						font-family: "Montserrat", sans-serif;
+						font-size: 1rem;
+						font-weight: 400;
+						color: rgba(2, 2, 11, 0.1);
+						&::placeholder {
+							color: rgba(2, 2, 11, 0.7);
+						}
+
+						&:focus {
+							color: $gunmetal;
+							outline-width: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/////////////////////
+
+	.Hero {
+		display: flex;
+		flex-flow: column;
+		margin: auto;
+		justify-content: center;
+		align-items: center;
+		min-height: 90vh;
+		background-image: url(/img/formula-1-img-1.JPG);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		box-shadow: inset 0 0 0 2000px rgba($gunmetal, 0.5);
+
+		@media only screen and (max-width: $medium) {
+			min-height: 70vh;
+		}
+
+		.CTAContainer {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 75vw;
+			margin: auto;
+			.HeroHeading {
+				color: $baby-powder;
+				padding-bottom: 3rem;
+				text-align: center;
+				h1 {
+					font-size: 4rem;
+					font-weight: 900;
+					text-transform: uppercase;
+					letter-spacing: -0.05em;
+					line-height: 1.2;
+					span {
+						color: $flame;
+						margin-left: 0.1em;
+					}
+				}
+				p {
+					font-size: 2rem;
+					font-weight: 200;
+				}
+			}
+
+			.HeaderSearchContainer {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 75vw;
+				margin: auto;
+
+				@media only screen and (max-width: $large) {
+					display: none;
+				}
+				.HeaderSearch {
+					display: block;
+					background-color: $baby-powder;
+					padding: 0.5rem 2rem;
+					width: 80%;
+
+					border-radius: 0.3125rem;
+
+					.SearchBarMainArea {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						justify-content: left;
+						max-width: 100vw;
+
+						.HeaderSearchButton {
+							background-color: transparent;
+							border: none;
+							cursor: pointer;
+							span {
+								font-size: 1.6rem;
+							}
+						}
+						.HeaderSearchInput {
+							border-right: 1px solid rgba(2, 2, 11, 0.1);
+							flex: 80%;
+							.SearchInput {
+								width: 80%;
+								height: 3.125rem;
+								padding-left: 2rem;
+								color: $gunmetal;
+								border-style: none;
+								font-family: "Montserrat", sans-serif;
+								font-size: 1rem;
+								font-weight: 400;
+								color: rgba(2, 2, 11, 0.1);
+								&::placeholder {
+									color: rgba(2, 2, 11, 0.7);
+								}
+
+								&:focus {
+									color: $gunmetal;
+									outline-width: 0;
+								}
+							}
+						}
+
+						.HeaderSearchMediaFilter {
+							flex: 20%;
+							display: flex;
+							align-items: center;
+							justify-content: flex-end;
+							padding: 0;
+							margin: 0;
+
+							.MediaFilter {
+								border: none;
+								height: 3.125rem;
+								color: $gunmetal;
+								border-style: none;
+								font-family: "Montserrat", sans-serif;
+								font-size: 1rem;
+								font-weight: 400;
+								&:focus {
+									color: $gunmetal;
+									outline-width: 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.HeadingContainer {
+		display: flex;
+		flex-flow: column;
+		align-items: left;
+		justify-content: center;
+		min-height: 15vh;
+		padding: 1rem 2.5rem;
+		box-shadow: 0px 11px 42px -6px rgba(0, 0, 0, 0.1);
+
+		.Heading {
+			font-size: 2.5rem;
+			line-height: 1.2;
+			letter-spacing: -0.05em;
+			font-weight: 900;
+			color: $rich-black-fogra-39;
+
+			@media only screen and (max-width: $medium) {
+				font-size: 1.8rem;
+			}
+			span {
+				color: $flame;
+				margin-left: 0.1em;
+			}
+		}
+	}
+
+	.AlbumCardContainer {
+		display: grid;
+		gap: 1rem;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		padding: 0 2.5rem 2.5rem 2.5rem;
+		border-bottom: 1px solid $rich-black-fogra-39;
+
+		@media only screen and (max-width: $x-small) {
+			grid-template-columns: repeat(1, minmax(0, 1fr));
+			padding: 0 1rem 1rem 1rem;
+		}
+
+		@media only screen and (max-width: $small) {
+			grid-template-columns: repeat(1, minmax(0, 1fr));
+			padding: 0 1rem 1rem 1rem;
+		}
+
+		@media only screen and (min-width: $small) {
+			grid-template-columns: repeat(1, minmax(0, 1fr));
+			padding: 0 1rem 1rem 1rem;
+		}
+
+		@media only screen and (min-width: $medium) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			padding: 0 1rem 1rem 1rem;
+		}
+
+		@media only screen and (min-width: $large) {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+			padding: 0 1rem 1rem 1rem;
+		}
+
+		.CardContainer {
+			position: relative;
+			width: 100%;
+			max-width: 60rem;
+			.Grow {
+				display: inline-block;
+				overflow: hidden;
+				border-radius: 0.4rem;
+				.ImageCard {
+					display: block;
+					width: 100%;
+					max-width: 60rem;
+					transition: transform 0.5s ease;
+					max-width: 100%;
+				}
+				img {
+					transition: all 0.5s ease-in-out;
+					&:hover {
+						transform: scale(1.1);
+						overflow: hidden;
+					}
+				}
+			}
+
+			.OverlayCard {
+				position: absolute;
+				overflow: hidden;
+				bottom: 0;
+				background: $gunmetal;
+				background: rgba($gunmetal, 0.7);
+				color: $baby-powder;
+				width: 100%;
+				height: 5rem;
+				min-height: 40%;
+				transition: 0.5s ease-in-out;
+				opacity: 0;
+				color: $baby-powder;
+				font-size: 1rem;
+				padding: 1.5rem;
+				text-align: left;
+				margin-bottom: 0.2rem;
+				border-bottom-left-radius: 0.4rem;
+				border-bottom-right-radius: 0.4rem;
+				h3 {
+					padding-bottom: 0.75rem;
+					text-transform: uppercase;
+				}
+			}
+
+			&:hover .OverlayCard {
+				opacity: 1;
+			}
+		}
+	}
+
+	.CTAShowBestOffer {
+		display: flex;
+		flex-flow: column;
+		align-items: left;
+		justify-content: center;
+		min-height: 60vh;
+		padding: 1rem 2.5rem;
+		box-shadow: 0px 11px 42px -6px rgba(0, 0, 0, 0.1);
+		background-image: url(/img/painted-hands.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		box-shadow: inset 0 0 0 2000px rgba($gunmetal, 0.7);
+
+		.CTATextWrapper {
+			min-width: 100%;
+			.CTAHeading {
+				color: $baby-powder;
+				h2 {
+					font-size: 3rem;
+					font-weight: 900;
+					text-transform: uppercase;
+					letter-spacing: -0.05em;
+					line-height: 1.5;
+					margin-bottom: 2rem;
+
+					@media only screen and (max-width: $small) {
+						font-size: 1.8rem;
+						font-weight: 800;
+						letter-spacing: 0;
+						line-height: 1.2;
+						margin-bottom: 1rem;
+					}
+
+					@media only screen and (max-width: $medium) {
+						font-size: 2rem;
+						font-weight: 900;
+						letter-spacing: 0.05em;
+						line-height: 1.2;
+						margin-bottom: 1rem;
+					}
+					span {
+						color: $flame;
+						margin-left: 0.1em;
+					}
+				}
+				p {
+					font-size: 1.5rem;
+					font-weight: 200;
+					line-height: 1.5;
+
+					@media only screen and (max-width: $small) {
+						font-size: 1.4rem;
+						font-weight: 200;
+						line-height: 1.4;
+					}
+
+					@media only screen and (max-width: $medium) {
+						font-size: 1.4rem;
+						font-weight: 200;
+						line-height: 1.4;
+					}
+				}
+				.CTAButton {
+					margin-top: 4rem;
+					a {
+						text-decoration: none;
+						color: $baby-powder;
+						margin-top: 4rem;
+						background: $flame;
+						padding: 1rem 2rem;
+						max-width: 100%;
+						text-transform: uppercase;
+						font-size: 1rem;
+						font-weight: 400;
+						border: 1px solid $flame;
+						border-radius: 0.3125rem;
+						cursor: pointer;
+						transition: 0.4s ease-out;
+						&:hover {
+							background: $gunmetal;
+							text-transform: uppercase;
+							border: 1px solid $baby-powder;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.CategoriesContainer {
+		display: grid;
+		gap: 2rem;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		padding-bottom: 2.5rem;
+		margin: 3rem;
+		border-bottom: 1px solid $gunmetal;
+
+		@media only screen and (max-width: $x-small) {
+			grid-template-columns: repeat(1, minmax(0, 1fr));
+			margin: 1rem;
+			padding-bottom: 1.2rem;
+		}
+
+		@media only screen and (min-width: $small) {
+			grid-template-columns: repeat(1, minmax(0, 1fr));
+			margin: 1rem;
+			padding-bottom: 1.2rem;
+		}
+
+		@media only screen and (min-width: $medium) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			margin: 1rem;
+			padding-bottom: 1.2rem;
+			align-items: center;
+		}
+
+		@media only screen and (min-width: $large) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			margin: 1rem;
+			padding-bottom: 1.2rem;
+			align-items: center;
+		}
+
+		@media only screen and (min-width: $xlarge) {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+			padding-bottom: 2.5rem;
+			margin: 3rem;
+		}
+
+		.CardDescriereCategorie {
+			display: flex;
+			flex-flow: column;
+			align-items: flex-start;
+			overflow: hidden;
+
+			.CardDescriereCategorieWrapper {
+				padding: 1rem 1rem 1rem 0;
+
+				.HeadingDescriereCategorie {
+					font-size: 1.6rem;
+					line-height: 1.75rem;
+					text-align: left;
+					font-weight: 800;
+					color: $gunmetal;
+					text-transform: uppercase;
+					margin-bottom: 1.75rem;
+					span {
+						font-size: 2rem;
+						color: $flame;
+						padding-left: 0.2rem;
+					}
+
+					@media only screen and (max-width: $small) {
+						font-size: 1.4rem;
+						font-weight: 800;
+						line-height: 1.4;
+					}
+
+					@media only screen and (max-width: $medium) {
+						font-size: 1.4rem;
+						font-weight: 800;
+						line-height: 1.4;
+					}
+				}
+				.TextDescriereCategorie {
+					color: $gunmetal;
+					font-weight: 400;
+					line-height: 1.5rem;
+					margin-bottom: 2rem;
+				}
+				.CategoriesButton {
+					margin-top: 4rem;
+					a {
+						text-decoration: none;
+						color: $baby-powder;
+						margin-top: 4rem;
+						background: $flame;
+						padding: 1rem 2rem;
+						max-width: 100%;
+						text-transform: uppercase;
+						font-size: 1rem;
+						font-weight: 400;
+						border-radius: 0.3125rem;
+						cursor: pointer;
+						transition: 0.4s ease-out;
+						&:hover {
+							background: $gunmetal;
+							text-transform: uppercase;
+						}
+					}
+				}
+			}
+		}
+
+		.CardContainer {
+			position: relative;
+			width: 100%;
+			max-width: 60rem;
+			.Grow {
+				display: inline-block;
+				overflow: hidden;
+				border-radius: 0.4rem;
+				.ImageCard {
+					display: block;
+					width: 100%;
+					max-width: 60rem;
+					transition: transform 0.5s ease;
+					max-width: 100%;
+				}
+				img {
+					transition: all 0.5s ease-in-out;
+					&:hover {
+						transform: scale(1.1);
+						overflow: hidden;
+					}
+				}
+			}
+
+			.OverlayCard {
+				position: absolute;
+				overflow: hidden;
+				bottom: 0;
+				background: $gunmetal;
+				background: rgba($gunmetal, 0.7);
+				color: $baby-powder;
+				width: 100%;
+				height: 5rem;
+				min-height: 40%;
+				transition: 0.5s ease-in-out;
+				opacity: 0;
+				color: $baby-powder;
+				font-size: 1rem;
+				padding: 1.5rem;
+				text-align: left;
+				margin-bottom: 0.2rem;
+				border-bottom-left-radius: 0.4rem;
+				border-bottom-right-radius: 0.4rem;
+				h3 {
+					padding-bottom: 0.75rem;
+					text-transform: uppercase;
+				}
+			}
+
+			&:hover .OverlayCard {
+				opacity: 1;
+			}
+		}
+	}
+
+	.FooterContainer {
+		background: $gray-footer;
+
+		// @media only screen and (max-width: $small) {
+		// 	display: none;
+		// }
+
+		// @media only screen and (max-width: $medium) {
+		// 	display: none;
+		// }
+
+		@media only screen and (max-width: $large) {
+			display: none;
+		}
+
+		.FooterWrapper {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+
+			max-width: 80%;
+			margin: auto;
+			border-bottom: solid 1px $gray-link-hover-footer;
+			padding-bottom: 0.75rem;
+
+			@media only screen and (min-width: $large) {
+				min-width: 100vh;
+			}
+
+			.FooterOffers {
+				display: flex;
+				flex-direction: column;
+				justify-content: left;
+				overflow: hidden;
+
+				.FooterColumn {
+					padding: 1rem 0.5rem 1.5rem 0;
+
+					.FooterTitleColumn {
+						font-size: 1.25rem;
+						line-height: 1.75rem;
+						letter-spacing: 0.075em;
+						text-align: left;
+						text-decoration: none;
+						font-weight: 700;
+						color: $light-gray-footer;
+						text-transform: uppercase;
+						margin-top: 2.5rem;
+						margin-bottom: 1rem;
+
+						span {
+							font-size: 2rem;
+							color: $flame;
+							padding-left: 0.2rem;
+						}
+					}
+
+					.FooterColumnItems {
+						display: flex;
+						flex-direction: column;
+						justify-content: left;
+
+						.FooterColumnItemLink {
+							color: $light-gray-footer;
+							text-decoration: none;
+							line-height: 1.75rem;
+							font-weight: 300;
+							letter-spacing: 0.05em;
+							transition-duration: 0.4s;
+
+							&:hover {
+								color: $gray-link-hover-footer;
+							}
+						}
+					}
+				}
+			}
+		}
+		.SmallFooterWrapper {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			max-width: 80%;
+			margin: auto;
+			padding-top: 1.2rem;
+			padding-bottom: 1.2rem;
+
+			.SmallFooterCopyrightInfo {
+				padding: 0 2.5rem;
+				.CopyrightText {
+					font-size: 0.85rem;
+					line-height: 1.25rem;
+					color: $light-gray-footer;
+					font-weight: 300;
+
+					.CopyrightTextLink {
+						text-decoration: none;
+						color: $flame;
+						transition-duration: 0.4s;
+
+						&:hover {
+							color: $gray-link-hover-footer;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.MobileContainer {
+	max-width: 100vw;
+	margin: auto;
+}
+
+.MobileFooter {
+	display: grid;
+	align-content: center;
+	// height: 100vh;
+
+	@media only screen and (min-width: $large) {
+		display: none;
+	}
+
+	.MobileFooterContainer {
+		display: grid;
+		row-gap: 0.75rem;
+		padding: 2rem 1rem;
+		background-color: $gray-footer;
+		box-shadow: 0 12px 32px rgba(51, 51, 51, 0.1);
+		color: $baby-powder;
+
+		.MobileFooterItem {
+			box-shadow: 0 2px 6px rgba(38, 38, 38, 0.1);
+			// background-color: $gray-footer;
+			position: relative;
+			transition: all 0.25s ease;
+			border-top: 1px solid $gray-link-hover-footer;
+
+			.MobileFooterHeader {
+				display: flex;
+				align-items: center;
+				column-gap: 0.5rem;
+				padding: 1.25rem 1.25rem 1.25rem 1rem;
+				cursor: pointer;
+
+				.MobileFooterIcon {
+					font-size: 1.5rem;
+					height: max-content;
+					color: $light-gray-footer;
+					transition: 0.3s;
+				}
+
+				.MobileFooterTitle {
+					font-size: 1.25rem;
+					color: $light-gray-footer;
+					font-weight: 700;
+					text-transform: uppercase;
+					transition: 0.2s;
+
+					span {
+						font-size: 2rem;
+						color: $flame;
+						padding-left: 0.2rem;
+					}
+				}
+			}
+			.MobileFooterContent {
+				overflow: hidden;
+				height: 0;
+				transition: all 0.25s ease;
+
+				.MobileFooterLink,
+				.MobileFooterHashtag {
+					padding: 0 1.25rem 1.25rem 3rem;
+					display: flex;
+					flex-direction: column;
+					justify-content: left;
+					text-decoration: none;
+					color: $light-gray-footer;
+					transition-duration: 0.4s;
+
+					&:hover {
+						color: $gray-link-hover-footer;
+					}
+				}
+			}
+		}
+		.SmallFooterWrapper {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			border-top: 1px solid $gray-link-hover-footer;
+			padding-top: 1rem;
+
+			.SmallFooterCopyrightInfo {
+				&:first-child {
+					padding-bottom: 0.5rem;
+				}
+				.CopyrightText {
+					font-size: 0.875rem;
+
+					.CopyrightTextLink {
+						font-size: 0.875rem;
+						text-decoration: none;
+						color: $flame;
+						padding-left: 0.2rem;
+						transition-duration: 0.4s;
+
+						&:hover {
+							color: $gray-link-hover-footer;
+						}
+					}
+				}
+			}
+		}
+	}
+	.MobileFooterOpen .MobileFooterIcon {
+		transform: rotate(45deg);
+	}
+	.MobileFooterOpen .MobileFooterTitle {
+		font-weight: 600;
+	}
+}
+
+///////////////////////////////////////////
+// SIGN IN PAGE
+//////////////////////////////////////////
+
+.SignInRegisterCardContainer {
+	display: grid;
+	align-content: center;
+	background: url(/img/diversity.jpg) no-repeat center center fixed;
+	background-size: cover;
+	height: 100vh;
+	position: relative;
+
+	.SignInHeader {
+		position: absolute;
+		top: 3rem;
+		left: 3rem;
+
+		a {
+			text-decoration: none;
+			transition: 0.4s ease-out;
+			.Cronos {
+				font-size: 2rem;
+				font-weight: 900;
+				text-transform: uppercase;
+				color: $gunmetal;
+			}
+			.Point {
+				font-size: 2rem;
+				font-weight: 900;
+				color: $flame;
+			}
+
+			&:hover {
+				color: $rich-black-fogra-39;
+			}
+		}
+	}
+
+	.SignInCard {
+		display: grid;
+		row-gap: 0.75rem;
+		padding: 2rem 1rem;
+		max-width: 33%;
+		margin: auto;
+		background-color: $baby-powder;
+		border-radius: 0.3125rem;
+
+		.SignInRegisterSection {
+			.FormContainer {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				margin: auto;
+
+				.SignInHeading {
+					font-size: 1.5em;
+					font-weight: 400;
+					margin: 2rem 0 2.2rem;
+					text-transform: uppercase;
+				}
+
+				.SignInText {
+					margin-bottom: 1rem;
+					a {
+						text-decoration: none;
+						color: $maximum-blue;
+						font-weight: 500;
+
+						&:hover {
+							color: $flame;
+						}
+					}
+				}
+
+				.SignInWrapper {
+					display: grid;
+					text-align: center;
+					.SignInForm {
+						input {
+							width: 90%;
+							height: 3.125rem;
+							margin: 0.4rem 0;
+							padding: 1rem 1.2rem;
+							border: 1px solid $gunmetal;
+							border-radius: 0.3125rem;
+							font-family: "Montserrat", sans-serif;
+
+							// padding-left: 2rem;
+							color: $gunmetal;
+							font-size: 1.2rem;
+							font-weight: 400;
+							color: rgba(2, 2, 11, 0.1);
+
+							&::placeholder {
+								color: rgba(2, 2, 11, 0.7);
+								font-size: 1rem;
+								font-weight: 400;
+							}
+
+							&:focus {
+								color: $gunmetal;
+								outline-width: 0;
+							}
+						}
+
+						.SignInButton {
+							width: 90%;
+							border: 1px solid $rich-black-fogra-39;
+							background-color: $rich-black-fogra-39;
+							color: $baby-powder;
+							padding: 1rem 1.2rem;
+							font-family: "Montserrat", sans-serif;
+							text-transform: uppercase;
+							font-size: 1rem;
+							font-weight: 400;
+							letter-spacing: 0.05em;
+							border-radius: 0.3125rem;
+							cursor: pointer;
+							transition: 0.4s ease-out;
+							margin: 0.4rem 0 1.5rem;
+
+							&:hover {
+								color: $baby-powder;
+								background-color: $gunmetal;
+								border: 1px solid $gunmetal;
+							}
+						}
+					}
+
+					.SignInDisclaimer,
+					.SignInForgotUserNameOrPassword,
+					.SignInCheckBoxLabel {
+						width: 90%;
+						justify-content: center;
+						text-align: center;
+						margin: auto;
+						font-size: 0.875rem;
+						margin-bottom: 1.5rem;
+
+						.DisclaimerLink {
+							text-decoration: none;
+							color: $maximum-blue;
+							font-weight: 500;
+
+							&:hover {
+								color: $flame;
+							}
+						}
+					}
+				}
+			}
+			//////////////////////////////////////////
+			// REGISTER FORM
+			//////////////////////////////////////////
+
+			.RegisterForm {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				margin: auto;
+
+				.RegisterHeading {
+					font-size: 1.5em;
+					font-weight: 400;
+					margin: 2rem 0 2.2rem;
+					text-transform: uppercase;
+				}
+
+				.RegisterText {
+					margin-bottom: 1rem;
+					a {
+						text-decoration: none;
+						color: $maximum-blue;
+						font-weight: 500;
+
+						&:hover {
+							color: $flame;
+						}
+					}
+				}
+
+				.RegisterWrapper {
+					.RegisterForm {
+						input {
+							width: 90%;
+							height: 3.125rem;
+							margin: 0.4rem 0;
+							padding: 1rem 1.2rem;
+							border: 1px solid $gunmetal;
+							border-radius: 0.3125rem;
+							font-family: "Montserrat", sans-serif;
+
+							padding-left: 2rem;
+							color: $gunmetal;
+							font-size: 1.2rem;
+							font-weight: 400;
+							color: rgba(2, 2, 11, 0.1);
+
+							&::placeholder {
+								color: rgba(2, 2, 11, 0.7);
+								font-size: 1rem;
+								font-weight: 400;
+							}
+
+							&:focus {
+								color: $gunmetal;
+								outline-width: 0;
+							}
+						}
+
+						.RegisterButton {
+							width: 90%;
+							border: 1px solid $rich-black-fogra-39;
+							background-color: $rich-black-fogra-39;
+							color: $baby-powder;
+							padding: 1rem 1.2rem;
+							font-family: "Montserrat", sans-serif;
+							text-transform: uppercase;
+							font-size: 1rem;
+							font-weight: 400;
+							letter-spacing: 0.05em;
+							border-radius: 0.3125rem;
+							cursor: pointer;
+							transition: 0.4s ease-out;
+							margin: 0.4rem 0 1.5rem;
+
+							&:hover {
+								color: $baby-powder;
+								background-color: $gunmetal;
+								border: 1px solid $gunmetal;
+							}
+						}
+					}
+
+					.RegisterDisclaimer,
+					.RegisterCheckBoxLabel {
+						width: 90%;
+						justify-content: center;
+						text-align: center;
+						margin: auto;
+						font-size: 0.875rem;
+						margin-bottom: 1.5rem;
+
+						.DisclaimerLink {
+							text-decoration: none;
+							color: $maximum-blue;
+							font-weight: 500;
+
+							&:hover {
+								color: $flame;
+							}
+						}
+					}
+
+					.RegisterCheckBoxWrapper {
+						display: flex;
+						flex-direction: row;
+						align-items: flex-start;
+						width: 90%;
+						margin-top: 0.5rem;
+
+						.RegisterCheckBox {
+							width: 1.5rem;
+							height: 1.5rem;
+						}
+
+						.RegisterCheckBoxLabel {
+							text-align: left;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+//////////////////////////////////////////
+// PRICES AND LICENSES
+//////////////////////////////////////////
+.PricesContainer {
+	display: grid;
+	align-content: center;
+	background: linear-gradient(45deg, rgba(2, 2, 11, 0.2), rgba(2, 2, 11, 0.4)),
+		url(/img/prices-background-1.jpg) no-repeat center center fixed;
+	background-size: cover;
+	height: calc(91vh);
+	position: relative;
+
+	.PriceHeadingContainer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		margin: 0 auto;
+		color: $baby-powder;
+	}
+}
